@@ -13,7 +13,7 @@
 
 @interface BNRItemsViewController ()
 
-@property (nonatomic, strong) IBOutlet UIView *headerView;
+//@property (nonatomic, strong) IBOutlet UIView *headerView;
 
 @end
 
@@ -38,6 +38,16 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"HomePwner";
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+        
+        navItem.rightBarButtonItem = bbi;
+        
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -54,10 +64,11 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
 
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
+    //UIView *header = self.headerView;
+    //[self.tableView setTableHeaderView:header];
 }
 
+/*
 - (UIView *)headerView
 {
     // If you haven't loaded the headerView yet...
@@ -71,6 +82,7 @@
 
     return _headerView;
 }
+ */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -132,6 +144,7 @@
                           withRowAnimation:UITableViewRowAnimationTop];
 }
 
+/*
 - (IBAction)toggleEditingMode:(id)sender
 {
     // If you are currently in editing mode...
@@ -149,6 +162,7 @@
         [self setEditing:YES animated:YES];
     }
 }
+ */
 
 - (void)viewWillAppear:(BOOL)animated
 {
