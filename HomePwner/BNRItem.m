@@ -2,8 +2,8 @@
 //  BNRItem.m
 //  RandomPossessions
 //
-//  Created by Joe Conway on 10/12/12.
-//  Copyright (c) 2012 Big Nerd Ranch. All rights reserved.
+//  Created by Citrixer for iOS practice purpose
+//  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
 #import "BNRItem.h"
