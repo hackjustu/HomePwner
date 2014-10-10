@@ -7,6 +7,7 @@
 //
 
 #import "BNRItemsViewController.h"
+#import "BNRDetailViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
@@ -17,6 +18,20 @@
 @end
 
 @implementation BNRItemsViewController
+
+- (void)tableView:(UITableView *)tableView
+        didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *detailViewController = [[ BNRDetailViewController alloc] init];
+    
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = items[indexPath.row];
+    
+    detailViewController.item = selectedItem;
+    
+    // Push it onto the top of the navigation controller's stack
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 
 - (instancetype)init
 {
