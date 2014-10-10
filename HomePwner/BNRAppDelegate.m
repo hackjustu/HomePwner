@@ -2,7 +2,7 @@
 //  BNRAppDelegate.m
 //  HomePwner
 //
-//  Created by John Gallagher on 1/7/14.
+//  Created by Citrixer for iOS practice purpose
 //  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
